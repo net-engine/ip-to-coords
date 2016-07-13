@@ -1,0 +1,25 @@
+{
+  "name": "ip-to-coords",
+  "version": "1.0.0",
+  "description": "Converts an array of IPs to an array of locations",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/net-engine/ip-to-coords.git"
+  },
+  "author": "Martin Langdon <martin@netengine.com.au>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/net-engine/ip-to-coords/issues"
+  },
+  "homepage": "https://github.com/net-engine/ip-to-coords#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "maxmind": "^1.1.0",
+    "request": "^2.73.0"
+  }
+}
