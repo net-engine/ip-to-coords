@@ -8,7 +8,7 @@ const bodyParser  = require("body-parser");
 const app         = express();
 const router      = express.Router();
 
-const cityLookup = maxmind.open("./GeoLite2-City.mmdb");
+const cityLookup  = maxmind.open("./GeoLite2-City.mmdb");
 
 const port = process.env.PORT || 3001;
 
@@ -35,6 +35,11 @@ router.route('/array')
 router.route('/:ip')
   .get((req, res) => {
     res.status(200).send(lookupIps([req.params.ip]));
+  });
+router.route('/where/am/i')
+  .get((req, res) => {
+    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    res.status(200).send(lookupIps([ip]));
   });
 
 app.listen(port, () => {
