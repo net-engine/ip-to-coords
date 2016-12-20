@@ -16,7 +16,7 @@ const lookupIps = ipList => {
   if (!cityLookup) return "Database Unavailable";
   return ipList.map(ip => {
     let city = cityLookup.get(ip);
-    return location ? city.location : 'not found';
+    return city ? city.location : 'not found';
   });
 };
 
