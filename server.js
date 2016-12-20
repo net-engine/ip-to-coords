@@ -14,7 +14,10 @@ const port = process.env.PORT || 3001;
 
 const lookupIps = ipList => {
   if (!cityLookup) return "Database Unavailable";
-  return ipList.map(ip => cityLookup.get(ip).location);
+  return ipList.map(ip => {
+    let city = cityLookup.get(ip);
+    return location ? city.location : 'not found';
+  });
 };
 
 app.all("*", function(req, res, next) {
